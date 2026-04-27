@@ -1,0 +1,86 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(100deg,
+        #f84e4e,
+        #ff9a53,
+        #ffdb63,
+        #7de17d,
+        #8080fe,
+        #d070d0
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Verdana;
+}
+
+.custom-navbar{
+    padding: 20px; 
+    border: 2px solid black;
+     background: linear-gradient(180deg,
+        #e11111,
+        #ff7b1d,
+        yellow,
+        #269a26,
+        #3232ca,
+        #6b00b7
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    color: rgb(255, 226, 240);
+    -webkit-text-stroke: 1px rgb(75, 0, 85);
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    background: linear-gradient(135deg, #ffdce8 0%, #f6c3ff 100%);
+    color: black;
+    margin: 8px 5px;
+    border-radius: 10px;
+    padding: 8px 20px ;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 8px #00000033;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.container{
+    display: flex;
+}
+
+.box{
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+img{
+    width: 300px;
+    height: 250px;
+}
+
+footer{
+    padding: 20px; 
+    border: 2px solid black;
+     background: linear-gradient(180deg,
+         #6b00b7,
+         #3232ca,
+         #269a26,
+         yellow,
+         #ff7b1d,
+         #e11111
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 15px;
+    color: rgb(255, 226, 240);
+    -webkit-text-stroke: 1px rgb(75, 0, 85);
+    font-weight: bold;
+}
