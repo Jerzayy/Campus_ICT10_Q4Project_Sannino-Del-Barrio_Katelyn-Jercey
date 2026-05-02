@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 10 Classmates System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            /* Static Rainbow Background */
+            background: linear-gradient(
+                124deg, 
+                #ff2400, 
+                #e81d1d, 
+                #e8b71d, 
+                #e3e81d, 
+                #1de840, 
+                #1ddde8, 
+                #2b1de8, 
+                #dd00f3
+            );
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
+            /* Font set to Verdana */
+
+            font-family: Verdana, Geneva, sans-serif;
+            margin: 0;
+        }
+
+        .square-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 0px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 800px;
+            border: 1px solid #000;
+        }
+
+        input {
+            border-radius: 0px !important;
+        }
+
+        #entriesList::-webkit-scrollbar {
+            width: 6px;
+        }
+        #entriesList::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        #entriesList::-webkit-scrollbar-thumb {
+            background: #000;
+        }
+        
+       
+        .capitalize-name {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<nav class="w-full bg-black px-4 py-2">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <a href="index.html" class="text-white font-bold text-lg">Grade 10-Ruby</a>
+        <ul class="flex gap-6">
+            <li><a href="index.html" class="text-white hover:text-gray-300 transition-all">Classmates</a></li>
+            <li><a href="skillstest.html" class="text-white hover:text-gray-300 transition-all">Attendance Tracker</a></li>
+            <li><a href="project.html" class="text-white hover:text-gray-300 transition-all">Gallery</a></li>
+        </ul>
+    </div>
+</nav>
+<body>
+
+    <br>
+    
+    <div class="square-card p-8 mb-6">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">
+                Grade 10 Classmates System
+            </h1>
+            <p class="text-gray-700 italic mt-1 text-lg">Add and view your classmates easily</p>
+        </div>
+
+        <div class="space-y-4">
+            <input type="text" id="nameInput" placeholder="Name" class="w-full p-2.5 border border-gray-400 focus:outline-none focus:border-black transition-all">
+            <input type="text" id="sectionInput" placeholder="Section" value="Ruby" class="w-full p-2.5 border border-gray-400 focus:outline-none focus:border-black transition-all">
+            <input type="text" id="subjectInput" placeholder="Favorite Subject" class="w-full p-2.5 border border-gray-400 focus:outline-none focus:border-black transition-all">
+            
+            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                <button onclick="addEntry()" class="flex-1 bg-black hover:bg-gray-800 text-white font-bold py-3 px-4 rounded-none transition-all uppercase tracking-widest text-sm">
+                    Add Classmate
+                </button>
+                <button onclick="toggleList()" class="flex-1 bg-black hover:bg-gray-800 text-white font-bold py-3 px-4 rounded-none transition-all uppercase tracking-widest text-sm border-l border-gray-700">
+                    Show List
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="listContainer" class="square-card p-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 border-b-2 border-black pb-2 uppercase tracking-tighter">
+            Classmate List
+        </h2>
+        <div id="entriesList" class="space-y-2 text-gray-900 text-base max-h-96 overflow-y-auto pr-2">
+            
+        </div>
+    </div>
+
+    <script>
+        const classmates = [
+            { name: "abaca", section: "Ruby", subject: "sci" },
+            { name: "alavado", section: "Ruby", subject: "math" },
+            { name: "arenal", section: "Ruby", subject: "music and ss" },
+            { name: "aventajado", section: "Ruby", subject: "music and ss" },
+            { name: "buhain", section: "Ruby", subject: "art" },
+            { name: "carpio", section: "Ruby", subject: "ss" },
+            { name: "cenon", section: "Ruby", subject: "snacktime" },
+            { name: "cruz", section: "Ruby", subject: "tle" },
+            { name: "de leon", section: "Ruby", subject: "pe" },
+            { name: "de peralta", section: "Ruby", subject: "ss" },
+            { name: "del barrio", section: "Ruby", subject: "eng" },
+            { name: "dida-agun", section: "Ruby", subject: "math" },
+            { name: "dumlao", section: "Ruby", subject: "math" },
+            { name: "estapia", section: "Ruby", subject: "tle" },
+            { name: "galope", section: "Ruby", subject: "ss" },
+            { name: "galura", section: "Ruby", subject: "tle" },
+            { name: "guevarra", section: "Ruby", subject: "PE" },
+            { name: "gurango", section: "Ruby", subject: "english" },
+            { name: "lazo", section: "Ruby", subject: "ss" },
+            { name: "liwag", section: "Ruby", subject: "ss and pe" },
+            { name: "magpantay", section: "Ruby", subject: "english & science" },
+            { name: "moyaen", section: "Ruby", subject: "music" },
+            { name: "panuncialman", section: "Ruby", subject: "math" },
+            { name: "prowel", section: "Ruby", subject: "ss(?)" },
+            { name: "ramos", section: "Ruby", subject: "pe" },
+            { name: "sannino", section: "Ruby", subject: "ss" },
+            { name: "tecson", section: "Ruby", subject: "dismissal" },
+            { name: "ulit", section: "Ruby", subject: "pe and ss" }
+        ];
+
+        function renderList() {
+            const listDiv = document.getElementById('entriesList');
+            if (classmates.length === 0) {
+                listDiv.innerHTML = '<p class="italic text-gray-500">No classmates added yet.</p>';
+                return;
+            }
+            listDiv.innerHTML = classmates.map(c => 
+                `<div class="py-2 border-b border-gray-300 last:border-0">
+                    hi! im <span class="font-bold capitalize-name">${c.name}</span> from <span class="font-bold">${c.section}</span>, 
+                    my favorite subject is <span class="italic underline">${c.subject}</span>
+                </div>`
+            ).join('');
+        }
+
+        function addEntry() {
+            const nameEl = document.getElementById('nameInput');
+            const sectionEl = document.getElementById('sectionInput');
+            const subjectEl = document.getElementById('subjectInput');
+
+            if (nameEl.value && sectionEl.value && subjectEl.value) {
+                classmates.push({ 
+                    name: nameEl.value, 
+                    section: sectionEl.value, 
+                    subject: subjectEl.value 
+                });
+                renderList();
+                
+                nameEl.value = '';
+                subjectEl.value = '';
+                nameEl.focus();
+
+                document.getElementById('listContainer').style.display = 'block';
+            }
+        }
+
+        function toggleList() {
+            const list = document.getElementById('listContainer');
+            if (list.style.display === 'none') {
+                list.style.display = 'block';
+            } else {
+                list.style.display = 'none';
+            }
+        }
+
+        window.onload = renderList;
+    </script>
+</body>
+</html>
