@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Classmate List</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <script src="https://kit.fontawesome.com/f93d92085b.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff3b3f, #ff9a3f, #ffed3f, #3fff72, #3fc8ff, #5b3bff, #ff3bce);
+            color: #111;
+        }
+
+        nav {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 12px 24px;
+            box-sizing: border-box;
+        }
+
+        nav .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        nav a.brand {
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #d1d1d1;
+            transform: translateY(-1px);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 24px 0;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 0 20px 40px;
+        }
+
+        .left {
+            width: 320px;
+            height: 320px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background: #111;
+            transform: translateY(-1px);
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .right {
+            width: 420px;
+            height: 320px;
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow-y: auto;
+        }
+
+    
+
+        nav ul li a {
+            display: block;
+            color: rgb(255, 255, 255);
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="brand">Grade 10-Ruby</a>
+        <ul>
+            <li><a href="index.html">Classmates</a></li>
+            <li><a href="skillstest.html">Attendance Tracker</a></li>
+            <li><a href="project.html">Gallery</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h1>Classmate List</h1>
+
+<div class="container">
+    <div class="left">
+        <input id="name" placeholder="Enter Name">
+        <input id="section" placeholder="Enter Section">
+        <input id="subject" placeholder="Favorite Subject">
+        <button type="button" id="button" onclick="add_student()">
+            Add Classmate
+        </button>
+    </div>
+    <div class="right" id="list"></div>
+</div>
+
+<py-script src="main.py"></py-script> 
+<py-config>
+    packages = ['numpy', 'matplotlib']
+</py-config>
+</body>
+</html>
