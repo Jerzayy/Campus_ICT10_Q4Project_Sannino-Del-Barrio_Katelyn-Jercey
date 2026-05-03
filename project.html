@@ -1,78 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Gallery</title>
-</head>
 <body>
-    <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#">Team Assignment</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href=seatwork2.html>Classmates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=skillstest.html>Attendance Tracker</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=project.html>Gallery</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <br><br>
-
-<div class="container">
-    <div class="box">
-        <img src="camping.png" alt="camping">
-        <h5>Camping</h5>
-        <p>Paragraph</p>
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="brand">Grade 10-Ruby</a>
+        <ul>
+            <li><a href="index.html">Classmates</a></li>
+            <li><a href="skillstest.html">Attendance Tracker</a></li>
+            <li><a href="project.html">Gallery</a></li>
+        </ul>
     </div>
+</nav>
 
-    <div class="box">
-        <img src="halloween.png" alt="halloween">
-        <h5>Halloween</h5>
-        <p>Paragraph</p>
-    </div>
+<h1 style="text-align:center;">Gallery</h1>
 
-    <div class="box">
-        <img src="peacecongress.png" alt="peacecongress">
-        <h5>Peace Congress</h5>
-        <p>Paragraph</p>
-    </div>
+<div class="gallery">
+    <div class="item"><img src="camping.png"><p>Camping</p></div>
+    <div class="item"><img src="halloween.png"><p>Halloween</p></div>
+    <div class="item"><img src="peacecongress.png"><p>Peace Congress</p></div>
+
+    <div class="item"><img src="intrams.png"><p>Intramurals</p></div>
+    <div class="item"><img src="poetryfes.png"><p>Poetry Festival</p></div>
+    <div class="item"><img src="catgrad.png"><p>CAT Graduation</p></div>
 </div>
 
-<div class="container">
-    <div class="box">
-        <img src="intrams.png" alt="intrams">
-        <h5>Intramurals</h5>
-        <p>Paragraph</p>
-    </div>
+<br>
 
-    <div class="box">
-        <img src="poetryfes.png" alt="poetry">
-        <h5>Poetry Festival</h5>
-        <p>Paragraph</p>
-    </div>
+<footer style="text-align:center;">© 2025-2026 10-Ruby</footer>
 
-    <div class="box">
-        <img src="catgrad.png" alt="catgrad">
-        <h5>CAT Graduation</h5>
-        <p>Paragraph</p>
-    </div>
-</div>
-
-<center><footer>© 2025-2026. 10-Ruby. All rights reserved. </footer></center>
 </body>
 </html>
