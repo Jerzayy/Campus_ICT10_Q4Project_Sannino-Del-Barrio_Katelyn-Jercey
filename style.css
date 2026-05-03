@@ -1,114 +1,88 @@
 body {
-            font-family: Verdana, Geneva, sans-serif;
-            margin: 0;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #ff3b3f, #ff9a3f, #ffed3f, #3fff72, #3fc8ff, #5b3bff, #ff3bce);
-            color: #111;
-        }
+    min-height: 100vh;
+    background: linear-gradient(100deg,
+        #f84e4e,
+        #ff9a53,
+        #ffdb63,
+        #7de17d,
+        #8080fe,
+        #d070d0
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Verdana;
+}
 
-        nav {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 12px 24px;
-            box-sizing: border-box;
-        }
+.custom-navbar{
+    padding: 20px; 
+    border: 2px solid black;
+     background: linear-gradient(180deg,
+        #e11111,
+        #ff7b1d,
+        yellow,
+        #269a26,
+        #3232ca,
+        #6b00b7
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-        nav .nav-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-        }
+.navbar-brand {
+    font-size: 30px;
+    color: rgb(255, 226, 240);
+    -webkit-text-stroke: 1px rgb(75, 0, 85);
+    font-weight: bold;
+}
 
-        nav a.brand {
-            color: white;
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-decoration: none;
-        }
+.navbar-nav .nav-link {
+    background: linear-gradient(135deg, #ffdce8 0%, #f6c3ff 100%);
+    color: black;
+    margin: 8px 5px;
+    border-radius: 10px;
+    padding: 8px 20px ;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 8px #00000033;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 24px;
-            margin: 0;
-            padding: 0;
-        }
+.container{
+    display: flex;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.2s ease, transform 0.2s ease;
-        }
+.box{
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
 
-        nav ul li a:hover {
-            color: #d1d1d1;
-            transform: translateY(-1px);
-        }
+img{
+    width: 300px;
+    height: 250px;
+}
 
-        h1 {
-            text-align: center;
-            margin: 24px 0;
-        }
+footer{
+    padding: 20px; 
+    border: 2px solid black;
+     background: linear-gradient(180deg,
+         #6b00b7,
+         #3232ca,
+         #269a26,
+         yellow,
+         #ff7b1d,
+         #e11111
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 15px;
+    color: rgb(255, 226, 240);
+    -webkit-text-stroke: 1px rgb(75, 0, 85);
+    font-weight: bold;
+}
 
-        .container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            padding: 0 20px 40px;
-        }
 
-        .left {
-            width: 320px;
-            height: 320px;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-sizing: border-box;
-        }
-
-        button:hover {
-            background: #111;
-            transform: translateY(-1px);
-        }
-
-        button:focus {
-            outline: none;
-            box-shadow: none;
-        }
-
-        .right {
-            width: 420px;
-            height: 320px;
-            background: white;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            overflow-y: auto;
-        }
-
-    
-
-        nav ul li a {
-            display: block;
-            color: rgb(255, 255, 255);
-            padding: 14px 16px;
-            text-decoration: none;
-        }
